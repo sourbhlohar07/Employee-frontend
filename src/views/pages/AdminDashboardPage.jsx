@@ -73,7 +73,7 @@ export default function AdminDashboardPage() {
       </div>
 
       {/* Interactive KPI Statistic Cards */}
-      <EnquiryStatsGrid
+      <EnquiryStatsGrid 
         counts={counts}
         activeStatusFilter={statusFilter}
         onSelectFilter={(status) => setStatusFilter(status)}
@@ -136,7 +136,7 @@ export default function AdminDashboardPage() {
       <div className="table-card">
         <div className="table-card-header">
           <div className="table-title-group">
-            <h2 className="table-title">All Enquiries</h2>
+            <h2 className="table-title">Active Enquiries</h2>
             <span className="workflow-hint-badge">
               Workflow: NEW &rarr; IN_PROGRESS &rarr; RESOLVED &rarr; CLOSED
             </span>
