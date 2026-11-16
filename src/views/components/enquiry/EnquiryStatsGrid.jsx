@@ -27,9 +27,13 @@ export default function EnquiryStatsGrid({
         tabIndex={0}
         title="Filter by all active enquiries"
       >
-        <div className="kpi-label">Active Total</div>
+        {/* <div className="kpi-label">Active Enquiries</div>
         <div className="kpi-value">{counts.activeTotal ?? 0}</div>
-        <div className="kpi-hint">Total open items</div>
+        <div className="kpi-hint">Total open items</div> */}
+
+          <div className="kpi-label">ALL Enquiries</div>
+        <div className="kpi-value">{counts.total ?? 0}</div>
+        <div className="kpi-hint">Total items</div>
       </div>
 
       {/* New Card */}
