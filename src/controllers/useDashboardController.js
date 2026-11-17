@@ -84,22 +84,37 @@ export const useDashboardController = ({ viewMode = "ALL" } = {}) => {
       closed: list.filter(
         (e) => (e.status || "").toUpperCase() === STATUS_ENUM.CLOSED,
       ).length,
+      // total: list.length
       activeTotal: list.filter(
         (e) => (e.status || "").toUpperCase() !== STATUS_ENUM.CLOSED,
       ).length,
+
+      total: list.length,
     };
   }, [allEnquiries]);
 
   // Base list based on viewMode
-  const baseEnquiries = useMemo(() => {
-    if (viewMode === "CLOSED") {
-      return allEnquiries.filter(
-        (e) => (e.status || "").toUpperCase() === STATUS_ENUM.CLOSED,
-      );
-    }
-    return allEnquiries;
-  }, [allEnquiries, viewMode]);
+ const baseEnquiries = useMemo(() => {
 
+  if (viewMode === "ALL") {
+    return allEnquiries;
+  }
+
+  if (viewMode === "ACTIVE") {
+    return allEnquiries.filter(
+      (e) => (e.status || "").toUpperCase() !== STATUS_ENUM.CLOSED
+    );
+  }
+
+  if (viewMode === "CLOSED") {
+    return allEnquiries.filter(
+      (e) => (e.status || "").toUpperCase() === STATUS_ENUM.CLOSED
+    );
+  }
+
+  return allEnquiries;
+
+}, [allEnquiries, viewMode]);
   // Filtered and sorted enquiries based on user controls
   const displayedEnquiries = useMemo(() => {
     return filterAndSortEnquiries(baseEnquiries, {

@@ -49,7 +49,7 @@ export default function EnquiryFilterBar({
             value={statusFilter}
             onChange={(e) => onStatusFilterChange(e.target.value)}
           >
-            <option value="ALL">All Enquiries</option>
+            <option value="ALL">Active Enquiries</option>
             <option value={STATUS_ENUM.NEW}>New</option>
             <option value={STATUS_ENUM.IN_PROGRESS}>In-Progress</option>
             <option value={STATUS_ENUM.RESOLVED}>Resolved</option>
