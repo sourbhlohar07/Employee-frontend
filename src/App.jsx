@@ -21,7 +21,7 @@ export default function App() {
             <Route path="/admin/login" element={<AdminLoginPage />} />
 
 
-          <Route path="/about" element={<AboutPage />} />
+          {/* <Route path="/about" element={<AboutPage />} /> */}
           
 
 
